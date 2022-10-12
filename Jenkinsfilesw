@@ -1,4 +1,4 @@
-node
+node('fbnode')
 {
 
 def mavenHome = tool name: "maven3.8.5"
@@ -29,7 +29,7 @@ sh "${mavenHome}/bin/mvn sonar:sonar"
 
 stage('UploadArtifactsIntoNexus'){
 sshagent(['f960f792-0782-4551-854a-ddcd88bd10e5']) {
-sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.179.255:/opt/apache-tomcat-9.0.65/webapps/"
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.35.175:/opt/apache-tomcat-9.0.65/webapps/"
 }
 
 }
