@@ -14,8 +14,8 @@ tools{
 }
 
 triggers {
-  //pollSCM('* * * * *')
-   cron('* * * * *')
+  pollSCM('* * * * *')
+  //cron('* * * * *')
 }
 
 options {
